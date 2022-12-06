@@ -27,14 +27,12 @@ class Drawings():
     jim.rt(20)
     jim.fd(Drawings.arm_length/2)
 
-
   #arm 2
   def arm_2(self,jim):
     jim.seth(20)
     jim.fd(Drawings.arm_length/2)
     jim.lt(20)
     jim.fd(Drawings.arm_length/2)
-
 
   #leg 1
   def leg_1(self,jim):
