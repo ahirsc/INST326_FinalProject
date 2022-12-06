@@ -1,4 +1,5 @@
 import turtle
+import random 
 
 class Drawings():
   
@@ -45,3 +46,39 @@ class Drawings():
     jim.seth(270)
     jim.fd(150)
     jim.seth(310)
+
+
+def generate_word():
+  words = {
+    1 : "community",
+    2 : "volcano",
+    3 : "sunrise",
+    4 : "hypothesis",
+    5 : "information",
+    6 : "sample",
+    7 : "probability",
+    8 : "Brazil",
+    9 : "railroad",
+    10 : "diamond",
+    11 : "query",
+    12 : "agreement",
+    13 : "reflection",
+    14 : "elephant",
+    15 : "pigeon",
+    16 : "technology",
+    17 : "multiply",
+    18 : "appetite",
+    19 : "designer",
+    20 : "function",
+    21 : "pandemic",
+    22 : "interface",
+    23 : "helicopter",
+    24 : "algorithm",
+    25 : "orange"
+  }
+  word_key = random.randint(1, 25)
+  selected_word = words[word_key]
+  return selected_word
+
+    
+ 
