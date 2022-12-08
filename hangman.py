@@ -61,7 +61,7 @@ class word_works(object):
       8 : "Brazil",
       9 : "railroad",
       10 : "diamond",
-      11 : "query",
+      11 : "question",
       12 : "agreement",
       13 : "reflection",
       14 : "elephant",
