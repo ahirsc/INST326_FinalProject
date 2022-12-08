@@ -78,6 +78,16 @@ def generate_word():
   }
   word_key = random.randint(1, 25)
   selected_word = words[word_key]
+  return selected_word, word_key
+   
+def display_word():
+  word = generate_word()
+  num_of_letters = generate_word()
+  i = 0
+  n = num_of_letters + 1
+  for i in range(n):
+    print(" _ ")
+    i += 1
 
-    
+  print(f"\nYour word contains {num_of_letters}. Guess a letter.")  
  
