@@ -81,8 +81,8 @@ def generate_word():
   return selected_word, word_key
 
 def display_word():
-  word = generate_word()
-  num_of_letters = generate_word()
+  word = select_word.generate_word()
+  num_of_letters = word_key.generate_word()
   i = 0
   n = num_of_letters + 1
   for i in range(n):
