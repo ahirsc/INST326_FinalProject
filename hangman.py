@@ -88,6 +88,6 @@ def display_word():
   for i in range(n):
     print(" _ ")
     i += 1
-
+    
   print(f"\nYour word contains {num_of_letters}. Guess a letter.")  
  
