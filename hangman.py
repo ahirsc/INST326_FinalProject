@@ -1,6 +1,6 @@
 import turtle
 import random 
-
+"""
 class Drawings():
   
   jim = turtle.Turtle() #Remember the capital T
@@ -46,50 +46,121 @@ class Drawings():
     jim.seth(270)
     jim.fd(150)
     jim.seth(310)
+"""
+class word_works(object):
+
+  def generate_word():
+    words = {
+      1 : "community",
+      2 : "volcano",
+      3 : "sunrise",
+      4 : "hypothesis",
+      5 : "information",
+      6 : "sample",
+      7 : "probability",
+      8 : "Brazil",
+      9 : "railroad",
+      10 : "diamond",
+      11 : "query",
+      12 : "agreement",
+      13 : "reflection",
+      14 : "elephant",
+      15 : "pigeon",
+      16 : "technology",
+      17 : "multiply",
+      18 : "appetite",
+      19 : "designer",
+      20 : "function",
+      21 : "pandemic",
+      22 : "interface",
+      23 : "helicopter",
+      24 : "algorithm",
+      25 : "orange"
+    }
+    word_key = random.randint(1, 25)
+    selected_word = words[word_key]
+    return selected_word
+
+  def display_word(self,selected_word):
+    word = selected_word.generate_word()
+    length_of_word = len(word)
+    display_letterinword = "_"*(length_of_word)
+    print(display_letterinword)
 
 
-def generate_word():
-  words = {
-    1 : "community",
-    2 : "volcano",
-    3 : "sunrise",
-    4 : "hypothesis",
-    5 : "information",
-    6 : "sample",
-    7 : "probability",
-    8 : "Brazil",
-    9 : "railroad",
-    10 : "diamond",
-    11 : "query",
-    12 : "agreement",
-    13 : "reflection",
-    14 : "elephant",
-    15 : "pigeon",
-    16 : "technology",
-    17 : "multiply",
-    18 : "appetite",
-    19 : "designer",
-    20 : "function",
-    21 : "pandemic",
-    22 : "interface",
-    23 : "helicopter",
-    24 : "algorithm",
-    25 : "orange"
-  }
-  word_key = random.randint(1, 25)
-  selected_word = words[word_key]
-  return selected_word, word_key
+number_of_guesses = 0
+correct_guesses = 0
+incorrect_guesses = 0
+guesses = []
 
-def display_word():
-  word = select_word.generate_word()
-  num_of_letters = word_key.generate_word()
-  i = 0
-  n = num_of_letters + 1
-  for i in range(n):
-    print(" _ ")
-    i += 1
+def repeated_letter(x,y):
+  if x in y:
+    print("\nThis letter has already been guessed!")
+    print("List of guessed letters:", guesses,"\n")
+  else:
+    pass
 
-  print(f"\nYour word contains {num_of_letters}. Guess a letter.")
+def list_duplicates_of(seq,item):
+    start_at = -1
+    locs = []
+    while True:
+        try:
+            loc = seq.index(item,start_at+1)
+        except ValueError:
+            break
+        else:
+            locs.append(loc)
+            start_at = loc
+    return locs
+  
+
+while number_of_guesses < length_of_word:
+  guess = input("\nEnter a letter to guess: ")
+  
+  repeated_letter(guess, guesses)
+  
+  if guess not in word:
+    incorrect_guesses+=1
+    
+  while guess in word:
+  
+    position = list_duplicates_of(word,guess)
+    print(position)
+    counter= 0
+    
+    for i in position:
+      #
+      index = position[counter]
+      #turn the string into a list
+      display_letterinword = list(display_letterinword)
+
+      #you can only insert a new item into a certain index if it's a list
+      display_letterinword.insert(index, guess)
+      display_letterinword.pop(index+1)
+    
+      #turn the list back into a string
+      display_letterinword = ''.join(display_letterinword)
+      correct_guesses += 1
+      
+      counter+=1
+    print (display_letterinword)
+    number_of_guesses +=1
+    break
+    
+  if correct_guesses == length_of_word:
+    print("You guessed correctly!")
+    break
+  if incorrect_guesses == 7:
+    print("You reached the guessing limit")
+    break
+  
+    #problem: same letter in two different positions, how do we make sure both go in? --- solved
+
+  
+
+
+
+
 
 
 
