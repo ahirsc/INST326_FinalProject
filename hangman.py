@@ -78,7 +78,6 @@ def generate_word():
   }
   word_key = random.randint(1, 25)
   selected_word = words[word_key]
-  return selected_word
 
     
  
