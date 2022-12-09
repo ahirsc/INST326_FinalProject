@@ -197,7 +197,7 @@ while number_of_guesses < length_of_word:
     print("You guessed correctly!")
     break
     
-  if incorrect_guesses == 7:
+  if incorrect_guesses == 6:
     print("You reached the guessing limit")
     print("The word was: ", word)
     break
